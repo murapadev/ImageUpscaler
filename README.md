@@ -1,54 +1,56 @@
-# Image Upscaler (Python)
+# 🖼️ Image Upscaler
 
-A simple, powerful image upscaler using the **Swin2SR** model from Hugging Face Transformers. 
-It supports **GPU acceleration (CUDA)** and **tiled processing** to handle high-resolution images without running out of memory.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Python](https://img.shields.io/badge/python-3.8+-blue)
 
-## Features
+> Image upscaler using Swin2SR model from Hugging Face Transformers.
 
-- **2x Upscaling**: Transforms low-res images into higher resolution variants up to 2x.
-- **GPU Support**: Automatically uses CUDA if available.
-- **Smart Tiling**: Splits large images into tiles to prevent Out-Of-Memory (OOM) errors on limited VRAM.
-- **Seamless Stitching**: Handles tile overlap to ensure no artifacts at tile boundaries.
+---
 
-## Installation
+## 📋 Tabla de contenidos
 
-1. **Clone the repository** (or download the files).
-2. **Install dependencies**:
-   It is recommended to use a virtual environment.
+- [Características](#-características)
+- [Instalación](#-instalación)
+- [Uso](#-uso)
+- [Contribución](#-contribución)
+- [Licencia](#-licencia)
 
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install -r requirements.txt
-   ```
+## ✨ Características
 
-## Usage
+- �.scale **2x Upscaling**: Mejora resolución hasta 2x
+- 🎮 **GPU Support**: Usa CUDA automáticamente
+- 🧩 **Smart Tiling**: Maneja imágenes grandes sin OOM
+- 🧵 **Seamless**: Une tiles sin artifacts
 
-### Basic Usage
+## 🛠️ Instalación
 
 ```bash
-python3 upscale.py input.jpg
-```
-This will save the output as `input_upscaled.jpg`.
+# Clonar
+git clone https://github.com/murapadev/ImageUpscaler.git
+cd ImageUpscaler
 
-### Custom Output Path
+# Instalar
+pip install -r requirements.txt
+```
+
+## 🚀 Uso
 
 ```bash
-python3 upscale.py input.jpg output.png
+# Básico
+python upscale.py input.jpg
+
+# Con output específico
+python upscale.py input.jpg --output result.jpg --scale 2
 ```
 
-### Advanced Options
+## 📝 Contribución
 
-- `--model`: Specify a custom Hugging Face model ID (default: `caidas/swin2SR-classical-sr-x2-64`).
-- `--tile-size`: Set the tile size for processing (default: `512`). Smaller values save memory but may be slower.
-- `--tile-overlap`: Set the overlap between tiles (default: `32`).
+Las contribuciones son bienvenidas. Abre un issue o pull request.
 
-```bash
-# Example for low VRAM
-python3 upscale.py input.jpg --tile-size 256
-```
+## 📄 Licencia
 
-## Requirements
+Este proyecto está licenciado bajo los términos de la licencia MIT.
 
-- Python 3.8+
-- CUDA-capable GPU (optional, but recommended for speed)
+---
+
+*Hecho con ❤️ por [murapadev](https://github.com/murapadev)*
